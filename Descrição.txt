@@ -1,0 +1,33 @@
+O arquivo .csv foi ordenado com base na coluna Id App, e também foram removidas todas colunas
+exceto: Nome App, Id App, Avaliação e Número de Instalações, todos em forma de strings. Após 
+isso, o arquivo .csv foi convertido para um arquivo .txt, fazer essas operações foi utilizado 
+um código em python que está disponibilizado.
+
+Não fui capaz de implementar tudo, do que foi implementado, 
+
+Temos uma pesquisa binária feita exclusivamente no arquivo de dados, sem utilização de índices
+
+Temos também uma AVL em memória
+utilizada para o campo Número de Instalações (talvez não tenha sido a melhor escolha de campo
+para a AVL, mas só pensei nisso depois de já implementada), basicamente ela armazena o número
+de instalações e a posição dela no arquivo original de dados, o meu notebook limitou para somente
+92 estruturas salvas na memória, acredito que por limitações de memória (notebooks são muito ruins
+e esse ta sempre tendo problema de disco ou memória em 100%), pode consultar com base num número
+de instalações ele irá imprimir corretamente o que foi salvo, fazendo a busca na estrutura de índices
+e depois buscando no arquivo diretamente na posição necessária.
+
+Também foi implementado um arquivo de índices completo para outros 2 campos, o campo chave que
+era o IdApp (que era pra ser feito com índices parciais, mas não sabia como fazer) e também para o campo
+NomeApp ( que não funciona devido aos nomes não estarem ordenados), fazendo uma pesquisa binária
+no arquivo de índices do IdApp é possível achar a posição em que se econtra a determinada Id no arquivo
+de dados através do FSEEK.
+
+Também teria uma árvore trie, que deveria ser para o campo NomeApp, mas não funcionou, tem os códigos
+dela mas não funciona.
+
+As únicas opreções que possue, é pesquisar uma Id digitando exatamente a Id do app e ele encontrará o 
+dados no arquivo de dados corretamente utilizando  o arquivo de índices.
+E também a de pesquisar por um número de instalações que possue a limitação de escrever os valores corretos
+em forma de string, ou seja pesquisar exatamente por "100+" por exemplo, não é o ideal mas funciona.
+
+Em resumo está bem incompleto, possue somente 2 estruturas de índices que funcionam.
